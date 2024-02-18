@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="platforms">
+        <div class="icons-wrapper">
+          <div class="icon icon--active icon--netflix"></div>
+          <div class="icon icon--hulu"></div>
+          <div class="icon icon--tvplus"></div>
+          <div class="icon icon--disney"></div>
+          <div class="icon icon--hbomax"></div>
+          <hr />
+          <div class="icon icon--new"></div>
+        </div>
+      </div>
+      <aside class="left">
+        <div class="menu-wrapper">
+          <h2>menu</h2>
+          <ul>
+            <li class="menu-item menu-item--active">Home</li>
+            <li>Discovery</li>
+            <li>Community</li>
+            <li class="notifications" notifications="2">
+              <span>Coming soon</span>
+            </li>
+          </ul>
+        </div>
+        <hr />
+        <div class="menu-wrapper">
+          <h2>library</h2>
+          <ul>
+            <li>Recent</li>
+            <li>Bookmarked</li>
+            <li>Top rated</li>
+            <li>Downloaded</li>
+          </ul>
+        </div>
+        <hr />
+        <div class="menu-wrapper">
+          <ul>
+            <li>Settings</li>
+            <li>Help</li>
+            <li>Logout</li>
+          </ul>
+        </div>
+      </aside>
+      <main>main</main>
+      <aside class="right">
+        <div class="user">
+          <div class="profil-pic">
+            <img
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="profil-pic"
+            />
+          </div>
+          <div class="user-infos">
+            <span class="user-fullname">Arman Rokni</span>
+            <span class="user-email">armanrokni@gmail.com</span>
+          </div>
+          <div class="icon"></div>
+        </div>
+        <div class="search">
+          <div class="search-input">
+            <input type="text" placeholder="Search movies" />
+          </div>
+        </div>
+        <div class="genre">
+          <h2>Genre</h2>
+          <div class="genre-list">
+            <div class="genre-card genre-card--active">Action</div>
+            <div class="genre-card">Crime & My</div>
+            <div class="genre-card">Comedy</div>
+            <div class="genre-card">Adventure</div>
+            <div class="genre-card">Historical</div>
+            <div class="genre-card">Science fi</div>
+            <div class="genre-card">Romance</div>
+            <div class="genre-card">Horror</div>
+            <div class="genre-card">Drama</div>
+            <div class="genre-card">Documentary</div>
+          </div>
+        </div>
+        <div class="recent-download">
+          <div class="header">
+            <h2>Recent Download</h2>
+            <h3>See all</h3>
+          </div>
+          <div class="movie-card"></div>
+        </div>
+        <div class="bookmarked">
+          <div class="header">
+            <h2>Bookmarked</h2>
+            <h3>See all</h3>
+          </div>
+          <div class="movie-card"></div>
+        </div>
+      </aside>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

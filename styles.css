@@ -1,0 +1,385 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+  /* TODO should set font family */
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+/* Layout styles */
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.wrapper > * {
+  height: 100%;
+}
+
+.platforms {
+  width: 5.83%;
+  max-width: 215px;
+  min-width: 112px;
+}
+
+aside.left {
+  width: 16.38%;
+  max-width: 604px;
+  min-width: 315px;
+}
+
+aside.right {
+  width: 21.37%;
+  max-width: 788px;
+  min-width: 410px;
+}
+
+main {
+  flex: 1;
+}
+
+/* Colors */
+
+.platforms,
+main {
+  background-color: #0d0d0f;
+}
+
+aside.left,
+aside.right {
+  background-color: #1a171e;
+}
+
+/* Platforms styles */
+
+.icons-wrapper {
+  margin-top: 136px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+
+  .icon {
+    width: 65px;
+    height: 65px;
+    background-color: white;
+    border-radius: 50%;
+
+    &.icon--active {
+      position: relative;
+    }
+
+    &.icon--active::before {
+      content: "";
+      width: 5px;
+      height: 64px;
+      background-color: inherit;
+      border-radius: 0 16px 16px 0;
+      position: absolute;
+      left: -24px;
+      top: 0;
+    }
+
+    &.icon--netflix {
+      background-color: #e50712;
+    }
+
+    &.icon--hulu {
+      background-color: #3fbc3c;
+    }
+
+    &.icon--tvplus {
+      background-color: #333333;
+    }
+
+    &.icon--disney {
+      background-color: #01147b;
+    }
+
+    &.icon--hbomax {
+      background-color: #6a1ad7;
+    }
+
+    &.icon--new {
+      background-color: #222127;
+    }
+  }
+
+  hr {
+    width: 80px;
+    height: 2px;
+  }
+}
+
+/* Left side panel styles */
+
+aside.left {
+  padding: 60px 0 33px 33px;
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+
+  h2 {
+    text-transform: uppercase;
+    color: #8d9096;
+    font-weight: normal;
+    font-size: 14px;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 21px;
+    color: #75787d;
+    position: relative;
+
+    span {
+      flex: 1;
+    }
+
+    &.menu-item--active {
+      &::after {
+        content: "";
+        width: 6px;
+        height: 32px;
+        background-color: #e50712;
+        border-radius: 16px 0 0 16px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    &::before {
+      content: "";
+      width: 22px;
+      height: 22px;
+      display: block;
+      background-color: #d9d9d9;
+    }
+  }
+
+  hr {
+    margin-right: 33px;
+  }
+
+  .notifications {
+    padding-right: 27px;
+
+    &::after {
+      content: attr(notifications);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      background-color: #e50712;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: #1a181e;
+      font-weight: bold;
+    }
+  }
+
+  .menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .menu-wrapper:last-child {
+    flex: 1;
+
+    ul {
+      flex: 1;
+    }
+
+    li:last-child {
+      flex: 1;
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+}
+
+/* Right side panel styles */
+
+aside.right {
+  padding: 15px 32px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .user {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 25px;
+
+    .profil-pic {
+      width: 67px;
+      height: 67px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 50%;
+      }
+    }
+
+    .user-infos {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      color: white;
+    }
+
+    .user-fullname {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .user-email {
+      font-size: 16px;
+    }
+
+    .icon::before {
+      content: "";
+      border-bottom: 4px solid white;
+      border-right: 4px solid white;
+      width: 12px;
+      height: 12px;
+      display: block;
+      transform: rotate(45deg);
+    }
+  }
+
+  .search {
+    padding: 20px 31px;
+    border-radius: 32px;
+    margin-bottom: 33px;
+    background-color: #0d0d0f;
+
+    .search-input {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      &::before,
+      &::after {
+        content: "";
+        width: 24px;
+        height: 24px;
+        background-color: #d9d9d9;
+      }
+    }
+
+    input {
+      flex: 1;
+      outline: none;
+      font-size: 16px;
+      background-color: transparent;
+      border: unset;
+      color: white;
+
+      &::placeholder {
+        color: white;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .genre {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 45px;
+
+    h2 {
+      color: #8d9096;
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    .genre-list {
+      display: grid;
+      grid-template-columns: repeat(2, 220px);
+      row-gap: 13px;
+      column-gap: 27px;
+    }
+
+    .genre-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px 15px 33px;
+      background-color: #0d0d0f;
+      border-radius: 26px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      text-transform: capitalize;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-color: #d9d9d9;
+      }
+
+      &.genre-card--active {
+        background-color: #e50712;
+      }
+    }
+  }
+
+  .recent-download,
+  .bookmarked {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    margin-bottom: 43px;
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+      h2 {
+        font-size: 26px;
+      }
+
+      h3 {
+        font-size: 20px;
+        font-weight: normal;
+        color: #94979d;
+      }
+    }
+
+    .movie-card {
+      height: 276px;
+      border-radius: 22px;
+      background-color: #d9d9d9;
+    }
+  }
+}
